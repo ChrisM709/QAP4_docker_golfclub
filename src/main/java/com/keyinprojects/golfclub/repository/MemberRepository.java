@@ -16,4 +16,6 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     List<Member> findByMemberPhone(String memberPhone);
 
     List<Member> findByStartDateMembership(LocalDate startDateMembership);
+
+    List<Member> findByMemberNameContainingIgnoreCase(String memberName);
 }

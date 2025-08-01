@@ -2,6 +2,8 @@ package com.keyinprojects.golfclub.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set; 
 
 
 @Entity
@@ -18,6 +20,10 @@ public class Member {
 
     private LocalDate startDateMembership;
     private int durationMembership;
+
+    @ManyToMany(mappedBy = "participatingMembers")
+    private Set<Tournament> tournaments = new HashSet<>();
+
 
     public Member() {}
 
